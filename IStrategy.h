@@ -6,6 +6,6 @@ typedef struct _istrategy
     char (*list)(void *data);
 } IStrategy;
 
-void DoAlgorithm(void *);
+void DoAlgorithm(void *data);
 
 #endif

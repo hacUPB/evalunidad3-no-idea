@@ -3,8 +3,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void SetStrategy(IStrategy *strategy){
-    strategy = malloc(sizeof(IStrategy));
+void Context(IStrategy *_strategy){
+    strategy = _strategy;
+}
+
+void SetStrategy(IStrategy *_strategy){
+    _strategy = malloc(sizeof(IStrategy));
 }
 
 void DoSomeBussinessLogic(){
@@ -14,6 +18,9 @@ void DoSomeBussinessLogic(){
     printf("Context: Sorting data using the strategy (not sure how it'll do it) %s\n");
     char list[] = {"a", "b", "c", "d", "e"};
     //char list[] = strategy->DoAlgorithm(){"a", "b", "c", "d", "e"};
+
+    char *rslt = strategy->DoAlgorithm((char *)list);
+
     for(int i = 0; i < sizeof(list); i++){
         context->resultStr[i] = list[i] + ",";
     }
