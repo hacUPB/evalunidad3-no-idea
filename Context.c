@@ -8,7 +8,7 @@ void Context(IStrategy *_strategy){
 }
 
 void SetStrategy(IStrategy *_strategy){
-    _strategy = malloc(sizeof(IStrategy));
+    strategy = _strategy;
 }
 
 void DoSomeBussinessLogic(){

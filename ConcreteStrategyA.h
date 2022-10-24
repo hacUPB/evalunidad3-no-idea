@@ -19,9 +19,11 @@ typedef struct _concrete_strategyA
     char data;
     char list[5];
 
-    struct IStrategy *strategy;
+    /*struct*/ IStrategy strategy;
 }ConcreteStrategyA;
 
-void *DoAlgorithm(char *data);
+void ConcreteStrategyA_ctor(ConcreteStrategyA * const me);
+
+//void *DoAlgorithm(char *data);
 
 #endif

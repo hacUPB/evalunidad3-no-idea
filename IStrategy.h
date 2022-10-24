@@ -1,24 +1,29 @@
 #ifndef _ISTRATEGY_H
 #define _ISTRATEGY_H
 
-struct stratVtbl;
+struct StratVtbl;
 typedef struct
 {
-    struct stratVtbl const *vptr;
+    struct StratVtbl const *vptr;
     
     /*char (*list)(void *data);*/
 } Strategy;
 
-struct stratVtbl{
-    void (*list)(Strategy const * const data);
+struct StratVtbl{
+    //void (*list)(Strategy const * const data);
+    void (*algo)(Strategy const * const data);
 }
 
 void IStrategy_ctor(Strategy * const data);
 
-static inline void Strategy_list(Strategy const * const data){
-    (*me->vptr->list)(data);
-}
+/*static inline void Strategy_list(Strategy const * const data){
+    (*data->vptr->list)(data);
+}*/
 
-void DoAlgorithm(void *data);
+//void DoAlgorithm(void *data);
+
+static inline void DoAlgorithm(Strategy const * const data){
+    (*data->vptr->algo)(data);
+}
 
 #endif
