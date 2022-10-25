@@ -19,7 +19,7 @@ typedef struct _concrete_strategyA
     char data;
     char list[5];
 
-    /*struct*/ IStrategy strategy;
+    /*struct*/ Strategy strategy;
 }ConcreteStrategyA;
 
 void ConcreteStrategyA_ctor(ConcreteStrategyA * const me);

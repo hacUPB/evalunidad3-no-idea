@@ -12,7 +12,7 @@ typedef struct
 struct StratVtbl{
     //void (*list)(Strategy const * const data);
     void (*algo)(Strategy const * const data);
-}
+};
 
 void IStrategy_ctor(Strategy * const data);
 

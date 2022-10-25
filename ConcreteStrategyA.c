@@ -28,11 +28,15 @@ static void DoAlgorithm_(void *data){
                 aux = list[j+1];
                 list[j+1] = list[j];
                 list[j] = aux;
-            }else if(list[j] > list[j+1]){
+            }/*else if(list[j] > list[j+1]){
                 aux = list[j+1];
                 list[j+1] = list[j];
                 list[j] = aux;
-            }
+            }*/
         }
+    }
+    
+    for(int x = 0; x < 5; x++){
+        printf("%s", list[x]);
     }
 }
