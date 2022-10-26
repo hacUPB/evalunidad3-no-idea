@@ -22,7 +22,7 @@ typedef struct _concrete_strategyA
     /*struct*/ Strategy strategy;
 }ConcreteStrategyA;
 
-void ConcreteStrategyA_ctor(ConcreteStrategyA * const me);
+void ConcreteStrategyA_ctor(ConcreteStrategyA * const me, char *list);
 
 //void *DoAlgorithm(char *data);
 

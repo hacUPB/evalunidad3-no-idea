@@ -8,7 +8,7 @@ void IStrategy_ctor(Strategy * const data){
         //&Strategy_list_,
         &DoAlgorithm_
     };
-    me->vptr = &vtbl;
+    data->vptr = &vtbl;
 }
 
 /*static void Strategy_list_(Strategy const * const me){
