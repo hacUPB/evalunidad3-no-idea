@@ -4,21 +4,18 @@
 #include <stdio.h>
 
 
-static void DoAlgorithm_(Strategy const * const me);
+static void DoAlgorithm_(char list[]);
 
-void ConcreteStrategyA_ctor(ConcreteStrategyA * const me, char list[]){
+void ConcreteStrategyA_ctor(ConcreteStrategyA * const me){
     static struct StratVtbl const vtbl = {
         &DoAlgorithm_
     };
 
     IStrategy_ctor(&me->strategy);
     me->strategy.vptr = &vtbl;
-    &me->list = list;
 }
 
-static void DoAlgorithm_(Strategy const * const me){
-
-    ConcreteStrategyA const * const me_ = (ConcreteStrategyA const *)me;
+static void DoAlgorithm_(char list[]){
 
     char *aux = NULL;
 
@@ -43,9 +40,9 @@ static void DoAlgorithm_(Strategy const * const me){
     for(pas = 0; pas < n-1 && inr; pas++){
         inr = 0;
         for(j = 0; j < n-pas; j++){
-            if(me_->list[j] > me_->list[j+1]){
-                me_->list[j] = me_->list[j+1];
-                me_->list[j+1] = aux;
+            if(list[j] > list[j+1]){
+                list[j] = list[j+1];
+                list[j+1] = aux;
             }
         }
     }
