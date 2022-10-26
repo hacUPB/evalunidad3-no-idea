@@ -3,7 +3,7 @@
 
 //static void Strategy_list_(Strategy const * const me);
 
-static void DoAlgrithm_(Strategy const * const me);
+static void DoAlgorithm_(Strategy const * const me);
 
 void IStrategy_ctor(Strategy * const data){
     static struct StratVtbl const vtbl = {
